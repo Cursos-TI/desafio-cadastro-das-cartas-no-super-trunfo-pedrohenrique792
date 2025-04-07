@@ -5,7 +5,18 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
-
+float densidade_populacional(int populacao, float area) {
+    if (area == 0) {
+        return 0; 
+    }
+    return populacao / area;
+}
+float pib_per_capita(int populacao, float pib) {
+    if (populacao == 0) {
+        return 0; 
+    }
+    return pib / populacao;
+}
 int main() {
     char estado1[50], estado2[50];
     char codigo1[50], codigo2[50];
@@ -58,6 +69,8 @@ int main() {
     printf("PIB: %.2f\n", pib1);
     printf("Área: %.2f\n", area1);
     printf("Pontos turísticos: %d\n", pontos_turisticos1);
+    printf("Densidade populacional: %.2f\n", densidade_populacional(populacao1, area1));
+    printf("PIB per capita: %.2f\n", pib_per_capita(populacao1, pib1));
 
     printf("\nCarta 2\n");
     printf("Estado: %s\n", estado2);
@@ -67,6 +80,8 @@ int main() {
     printf("PIB: %.2f\n", pib2);
     printf("Área: %.2f\n", area2);
     printf("Pontos turísticos: %d\n", pontos_turisticos2);
+    printf("Densidade populacional: %.2f\n", densidade_populacional(populacao2, area2));
+    printf("PIB per capita: %.2f\n", pib_per_capita(populacao2, pib2));
 
     return 0;
 }
